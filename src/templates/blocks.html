@@ -1,11 +1,11 @@
 <div id="people" data-link-name="people header" class="section header people" data-id="people">
   <div class="section-header--image">
-    <div class="image--overlay"></div>
-    <img class="{{imageclass}} place-image" data-lazy-img alt="{{id}}" data-src="https://media.guim.co.uk/e16576b9483026fc2724427f5015652a1f88dcac/0_1292_10328_6199/2000.jpg" src="" height="600" width="900" />
+    <img class="{{imageclass}} place-image people-image" data-lazy-img alt="{{id}}" data-src="https://media.guim.co.uk/cffcee2ab6f7219e1c838cbcdf39db39158adc75/0_678_7558_4536/2000.jpg" src="" height="600" width="900" />
     <div class="section-header--title">
       <div class="gs-container">
         <div class="content__main-column">
           <h1>People</h1>
+          <p>Names to watch out for - from the up and coming to the influential</p>
         </div>
       </div>
     </div>
@@ -17,12 +17,11 @@
       </div>
     </div>
     <div class="section-header--button">
-      <svg width="46px" height="46px" viewBox="10 1951 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <defs></defs>
-          <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(11.000000, 1952.000000)">
-              <polygon id="" fill="#FFFFFF" points="20.9090909 22.9090909 12 22.5 12 21.1136364 20.9090909 20.7272727 21.2954545 11.8181818 22.6818182 11.8181818 23.0909091 20.7272727 32 21.1136364 32 22.5 23.0909091 22.9090909 22.6818182 31.8181818 21.2954545 31.8181818"></polygon>
-              <circle id="Oval" stroke="#FFFFFF" cx="22" cy="22" r="22"></circle>
-          </g>
+      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+        <g fill="none" fill-rule="evenodd">
+          <circle cx="22" cy="22" r="22" fill="#FFABDB"/>
+          <polygon fill="#000" fill-rule="nonzero" points="20.909 23.091 12 22.682 12 21.295 20.909 20.909 21.295 12 22.682 12 23.091 20.909 32 21.295 32 22.682 23.091 23.091 22.682 32 21.295 32"/>
+        </g>
       </svg>
       <p class="button">Read more</p>
     </div>
@@ -30,24 +29,21 @@
   <div class="section copy people">
   {{#People}}
       <div class="content__main-column">
+      <h1 class="heading" id="{{section}}"><div class="text">{{{headline}}}</div></h1>
       {{#image}}
         <div class="body-image">
-          <div class="image--overlay"></div>
           <img src="{{{image}}}">
         </div>
       {{/image}}
-      <h1 class="heading" id="{{section}}">{{{headline}}}</h1>
-      <pre class="copy">{{{description}}}<span class="credit">{{{credit}}}</span></pre>
       {{#imageCaption}}
         <div class="caption">
           <p class="caption-text">
-              <svg width="13px" height="10px" viewBox="419 355 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <path d="M431.714076,357.781915 L430.909531,356.963733 L428.168622,356.963733 L426.804985,355.600097 L424.609531,355.600097 L423.245894,356.963733 L420.532258,356.963733 L419.714076,357.781915 L419.714076,363.809188 L420.532258,364.613733 L430.909531,364.613733 L431.714076,363.768279 L431.714076,357.781915 Z M425.714076,363.100097 C424.35044,363.100097 423.259531,362.009188 423.259531,360.659188 C423.259531,359.295551 424.35044,358.204642 425.714076,358.204642 C427.077713,358.204642 428.182258,359.295551 428.182258,360.659188 C428.182258,362.009188 427.077713,363.100097 425.714076,363.100097 Z" id="" stroke="none" fill="#767676" fill-rule="evenodd"></path>
-              </svg>
-            <span class="pre">Above</span> {{imageCaption}}
+            <svg width="11" height="10" viewBox="0 0 11 10"><path fill-rule="evenodd" d="M5.5 0L11 10H0z"/></svg>
+           {{imageCaption}}
           </p>
         </div>
       {{/imageCaption}}
+      <pre class="copy">{{{description}}}</pre><div class="credit">{{{credit}}}</div>
       </div>
       <div class="ad--wrapper--desktop">
         <div id="{{adID}}" class="js-ad-slot ad-slot ad-slot--mpu-banner-ad ad-slot--right" data-link-name="ad slot {{adDataName}}" data-test-id="{{adTestId}}" data-name="{{adName}}" data-mobile="1,1|2,2|300,250|fluid" data-desktop="1,1|2,2|300,250|fluid"></div>
@@ -66,12 +62,12 @@
 <!--places-->
 <div id="places" data-link-name="places header" class="section header places" data-id="places">
   <div class="section-header--image">
-    <div class="image--overlay"></div>
-    <img class="bottom place-image" data-lazy-img alt="{{id}}" data-src="https://media.guim.co.uk/82d0fc44765fa4366de25da0d17852042180b830/0_0_5602_3735/2000.jpg" src="" height="600" width="900" />
+    <img class="bottom place-image place-image places-image" data-lazy-img alt="{{id}}" data-src="https://media.guim.co.uk/28541643d5270cda041e6229a2e078e818d20928/0_374_5616_3370/2000.jpg" src="" height="600" width="900" />
     <div class="section-header--title">
       <div class="gs-container">
         <div class="content__main-column">
           <h1>Places</h1>
+          <p>Make a booking in a small but perfect fish restaurant in Brighton, plan a holiday in British Columbia</p>
         </div>
       </div>
     </div>
@@ -83,12 +79,11 @@
       </div>
     </div>
     <div class="section-header--button">
-      <svg width="46px" height="46px" viewBox="10 1951 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <defs></defs>
-          <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(11.000000, 1952.000000)">
-              <polygon id="" fill="#FFFFFF" points="20.9090909 22.9090909 12 22.5 12 21.1136364 20.9090909 20.7272727 21.2954545 11.8181818 22.6818182 11.8181818 23.0909091 20.7272727 32 21.1136364 32 22.5 23.0909091 22.9090909 22.6818182 31.8181818 21.2954545 31.8181818"></polygon>
-              <circle id="Oval" stroke="#FFFFFF" cx="22" cy="22" r="22"></circle>
-          </g>
+      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+        <g fill="none" fill-rule="evenodd">
+          <circle cx="22" cy="22" r="22" fill="#FFABDB"/>
+          <polygon fill="#000" fill-rule="nonzero" points="20.909 23.091 12 22.682 12 21.295 20.909 20.909 21.295 12 22.682 12 23.091 20.909 32 21.295 32 22.682 23.091 23.091 22.682 32 21.295 32"/>
+        </g>
       </svg>
       <p class="button">Read more</p>
     </div>
@@ -96,24 +91,21 @@
   <div class="section copy places">
   {{#Places}}
       <div class="content__main-column">
+        <h1 class="heading" id="{{section}}"><div class="text">{{{headline}}}</div></h1>
         {{#image}}
           <div class="body-image">
-            <div class="image--overlay"></div>
             <img src="{{{image}}}">
           </div>
         {{/image}}
-      <h1 class="heading" id="{{section}}">{{{headline}}}</h1>
-      <pre class="copy">{{{description}}}<span class="credit">{{{credit}}}</span></pre>
-      {{#imageCaption}}
-        <div class="caption">
-          <p class="caption-text">
-              <svg width="13px" height="10px" viewBox="419 355 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <path d="M431.714076,357.781915 L430.909531,356.963733 L428.168622,356.963733 L426.804985,355.600097 L424.609531,355.600097 L423.245894,356.963733 L420.532258,356.963733 L419.714076,357.781915 L419.714076,363.809188 L420.532258,364.613733 L430.909531,364.613733 L431.714076,363.768279 L431.714076,357.781915 Z M425.714076,363.100097 C424.35044,363.100097 423.259531,362.009188 423.259531,360.659188 C423.259531,359.295551 424.35044,358.204642 425.714076,358.204642 C427.077713,358.204642 428.182258,359.295551 428.182258,360.659188 C428.182258,362.009188 427.077713,363.100097 425.714076,363.100097 Z" id="" stroke="none" fill="#767676" fill-rule="evenodd"></path>
-              </svg>
-            <span class="pre">Above</span> {{imageCaption}}
-          </p>
-        </div>
-      {{/imageCaption}}
+        {{#imageCaption}}
+          <div class="caption">
+            <p class="caption-text">
+              <svg width="11" height="10" viewBox="0 0 11 10"><path fill-rule="evenodd" d="M5.5 0L11 10H0z"/></svg>
+              {{imageCaption}}
+            </p>
+          </div>
+        {{/imageCaption}}
+      <pre class="copy">{{{description}}}</pre><div class="credit">{{{credit}}}</div>
       </div>
       <div class="ad--wrapper--desktop">
         <div id="{{adID}}" class="js-ad-slot ad-slot ad-slot--mpu-banner-ad ad-slot--right" data-link-name="ad slot {{adDataName}}" data-test-id="{{adTestId}}" data-name="{{adName}}" data-mobile="1,1|2,2|300,250|fluid" data-desktop="1,1|2,2|300,250|fluid"></div>
@@ -126,12 +118,12 @@
 <!--FoodDrink-->
 <div id="FoodDrink" data-link-name="food header" class="section header FoodDrink" data-id="FoodDrink">
   <div class="section-header--image">
-    <div class="image--overlay"></div>
-    <img class="bottom place-image" data-lazy-img alt="{{id}}" data-src="https://media.guim.co.uk/88b4600b23658c083faf24d3b85fb57bc53291ad/0_0_6144_3686/2000.jpg" src="" height="600" width="900" />
+    <img class="bottom place-image  food-image" data-lazy-img alt="{{id}}" data-src="https://media.guim.co.uk/98e8d3e1ff1cf643166862cdea0100efcbc8dab4/0_423_6389_3836/2000.jpg" src="" height="600" width="900" />
     <div class="section-header--title">
       <div class="gs-container">
         <div class="content__main-column">
           <h1>Food &amp; drink</h1>
+          <p>Indulge in the ultimate steak, join the deep fried revival, try pepper from Nepal</p>
         </div>
       </div>
     </div>
@@ -143,12 +135,11 @@
       </div>
     </div>
     <div class="section-header--button">
-      <svg width="46px" height="46px" viewBox="10 1951 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <defs></defs>
-          <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(11.000000, 1952.000000)">
-              <polygon id="" fill="#FFFFFF" points="20.9090909 22.9090909 12 22.5 12 21.1136364 20.9090909 20.7272727 21.2954545 11.8181818 22.6818182 11.8181818 23.0909091 20.7272727 32 21.1136364 32 22.5 23.0909091 22.9090909 22.6818182 31.8181818 21.2954545 31.8181818"></polygon>
-              <circle id="Oval" stroke="#FFFFFF" cx="22" cy="22" r="22"></circle>
-          </g>
+      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+        <g fill="none" fill-rule="evenodd">
+          <circle cx="22" cy="22" r="22" fill="#FFABDB"/>
+          <polygon fill="#000" fill-rule="nonzero" points="20.909 23.091 12 22.682 12 21.295 20.909 20.909 21.295 12 22.682 12 23.091 20.909 32 21.295 32 22.682 23.091 23.091 22.682 32 21.295 32"/>
+        </g>
       </svg>
       <p class="button">Read more</p>
     </div>
@@ -156,24 +147,21 @@
   <div class="section copy FoodDrink">
   {{#FoodDrink}}
       <div class="content__main-column">
+        <h1 class="heading" id="{{section}}"><div class="text">{{{headline}}}</div></h1>
         {{#image}}
           <div class="body-image">
-            <div class="image--overlay"></div>
             <img src="{{{image}}}">
           </div>
         {{/image}}
-      <h1 class="heading" id="{{section}}">{{{headline}}}</h1>
-      <pre class="copy">{{{description}}}<span class="credit">{{{credit}}}</span></pre>
-      {{#imageCaption}}
-      <div class="caption">
-        <p class="caption-text">
-            <svg width="13px" height="10px" viewBox="419 355 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path d="M431.714076,357.781915 L430.909531,356.963733 L428.168622,356.963733 L426.804985,355.600097 L424.609531,355.600097 L423.245894,356.963733 L420.532258,356.963733 L419.714076,357.781915 L419.714076,363.809188 L420.532258,364.613733 L430.909531,364.613733 L431.714076,363.768279 L431.714076,357.781915 Z M425.714076,363.100097 C424.35044,363.100097 423.259531,362.009188 423.259531,360.659188 C423.259531,359.295551 424.35044,358.204642 425.714076,358.204642 C427.077713,358.204642 428.182258,359.295551 428.182258,360.659188 C428.182258,362.009188 427.077713,363.100097 425.714076,363.100097 Z" id="" stroke="none" fill="#767676" fill-rule="evenodd"></path>
-            </svg>
-          <span class="pre">Above</span> {{imageCaption}}
-        </p>
-      </div>
-      {{/imageCaption}}
+        {{#imageCaption}}
+        <div class="caption">
+          <p class="caption-text">
+            <svg width="11" height="10" viewBox="0 0 11 10"><path fill-rule="evenodd" d="M5.5 0L11 10H0z"/></svg>
+           {{imageCaption}}
+          </p>
+        </div>
+        {{/imageCaption}}
+      <pre class="copy">{{{description}}}</pre><div class="credit">{{{credit}}}</div>
       </div>
       <div class="ad--wrapper--desktop">
         <div id="{{adID}}" class="js-ad-slot ad-slot ad-slot--mpu-banner-ad ad-slot--right" data-link-name="ad slot {{adDataName}}" data-test-id="{{adTestId}}" data-name="{{adName}}" data-mobile="1,1|2,2|300,250|fluid" data-desktop="1,1|2,2|300,250|fluid"></div>
@@ -192,12 +180,12 @@
 <!--BOOKS-->
 <div id="books" data-link-name="books header" class="section header books" data-id="books">
   <div class="section-header--image">
-    <div class="image--overlay"></div>
-    <img class="{{imageclass}} place-image" data-lazy-img alt="{{id}}" data-src="https://media.guim.co.uk/8ca571217ca9c7cfe67050841572fdd69b142e68/0_158_5694_3416/2000.jpg" src="" height="600" width="900" />
+    <img class="{{imageclass}} place-image writing-image" data-lazy-img alt="{{id}}" data-src="https://media.guim.co.uk/e7e6ea1886031c908287d3d807c3a3eb418a4d94/859_1445_5780_3467/2000.jpg" src="" height="600" width="900" />
     <div class="section-header--title">
       <div class="gs-container">
         <div class="content__main-column">
-          <h1>Books</h1>
+          <h1>Writing</h1>
+          <p>Classic books, adventurous magazines, new voices</p>
         </div>
       </div>
     </div>
@@ -209,12 +197,11 @@
       </div>
     </div>
     <div class="section-header--button">
-      <svg width="46px" height="46px" viewBox="10 1951 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <defs></defs>
-          <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(11.000000, 1952.000000)">
-              <polygon id="" fill="#FFFFFF" points="20.9090909 22.9090909 12 22.5 12 21.1136364 20.9090909 20.7272727 21.2954545 11.8181818 22.6818182 11.8181818 23.0909091 20.7272727 32 21.1136364 32 22.5 23.0909091 22.9090909 22.6818182 31.8181818 21.2954545 31.8181818"></polygon>
-              <circle id="Oval" stroke="#FFFFFF" cx="22" cy="22" r="22"></circle>
-          </g>
+      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+        <g fill="none" fill-rule="evenodd">
+          <circle cx="22" cy="22" r="22" fill="#FFABDB"/>
+          <polygon fill="#000" fill-rule="nonzero" points="20.909 23.091 12 22.682 12 21.295 20.909 20.909 21.295 12 22.682 12 23.091 20.909 32 21.295 32 22.682 23.091 23.091 22.682 32 21.295 32"/>
+        </g>
       </svg>
       <p class="button">Read more</p>
     </div>
@@ -222,24 +209,21 @@
   <div class="section copy books">
   {{#Books}}
       <div class="content__main-column">
+      <h1 class="heading" id="{{section}}"><div class="text">{{{headline}}}</div></h1>
         {{#image}}
           <div class="body-image">
-            <div class="image--overlay"></div>
             <img src="{{{image}}}">
           </div>
         {{/image}}
-      <h1 class="heading" id="{{section}}">{{{headline}}}</h1>
-      <pre class="copy">{{{description}}}<span class="credit">{{{credit}}}</span></pre>
-      {{#imageCaption}}
-        <div class="caption">
-          <p class="caption-text">
-              <svg width="13px" height="10px" viewBox="419 355 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <path d="M431.714076,357.781915 L430.909531,356.963733 L428.168622,356.963733 L426.804985,355.600097 L424.609531,355.600097 L423.245894,356.963733 L420.532258,356.963733 L419.714076,357.781915 L419.714076,363.809188 L420.532258,364.613733 L430.909531,364.613733 L431.714076,363.768279 L431.714076,357.781915 Z M425.714076,363.100097 C424.35044,363.100097 423.259531,362.009188 423.259531,360.659188 C423.259531,359.295551 424.35044,358.204642 425.714076,358.204642 C427.077713,358.204642 428.182258,359.295551 428.182258,360.659188 C428.182258,362.009188 427.077713,363.100097 425.714076,363.100097 Z" id="" stroke="none" fill="#767676" fill-rule="evenodd"></path>
-              </svg>
-            <span class="pre">Above</span> {{imageCaption}}
-          </p>
-        </div>
-      {{/imageCaption}}
+        {{#imageCaption}}
+          <div class="caption">
+            <p class="caption-text">
+              <svg width="11" height="10" viewBox="0 0 11 10"><path fill-rule="evenodd" d="M5.5 0L11 10H0z"/></svg>
+             {{imageCaption}}
+            </p>
+          </div>
+        {{/imageCaption}}
+      <pre class="copy">{{{description}}}</pre><div class="credit">{{{credit}}}</div>
       </div>
       <div class="ad--wrapper--desktop">
         <div id="{{adID}}" class="js-ad-slot ad-slot ad-slot--mpu-banner-ad ad-slot--right" data-link-name="ad slot {{adDataName}}" data-test-id="{{adTestId}}" data-name="{{adName}}" data-mobile="1,1|2,2|300,250|fluid" data-desktop="1,1|2,2|300,250|fluid"></div>

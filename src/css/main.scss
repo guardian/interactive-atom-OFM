@@ -1,26 +1,33 @@
 @import "mq";
 @import "fonts";
-
-// Uncomment for embeds
+$lightPink: #FFABDB;
+$mediumPink: #BB3B80;
+$darkPink: #7D0068;
+$black: #121212;
+$grey: #DCDCDC; // Uncomment for embeds
 //@import "embed";
-
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
 
 .element-atom,
 .interactive-atom {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
-body{
+body {
   overflow: hidden;
+  font-family: "Guardian Headline Regular", Georgia, serif;
+  font-weight: 400;
+
+  a {
+    color: $darkPink;
+  }
 }
 
-img[data-lazy-img]{
-
+img[data-lazy-img] {
   width: auto;
 
-  &.inView{
+  &.inView {
     animation-delay: 0.5s;
     animation: fadeIn;
     animation-duration: 0.5s;
@@ -28,97 +35,99 @@ img[data-lazy-img]{
     animation-iteration-count: 1;
   }
 }
-
-@keyframes fadeIn{
-  0%{
+@keyframes fadeIn {
+  0% {
     opacity: 0;
   }
-  100%{
+
+  100% {
     opacity: 1;
   }
 }
 
 .interactive-blocks {
-  background-color: #f6f6f6;
+  background-color: #fff;
 }
 
-.ad--wrapper--desktop{
-    display: none;
-
-    @include mq($from: desktop){
-      display: block;
-      position: absolute;
-      width: 300px;
-      position: absolute;
-      top: 0px;
-      right: 40px;
-      top: 10px;
-    }
+.ad--wrapper--desktop {
+  display: none;
+  @include mq($from: desktop) {
+    display: block;
+    position: absolute;
+    width: 300px;
+    position: absolute;
+    right: 40px;
+    top: 60px;
+  }
 }
 
-.ad--wrapper--mobile{
+.ad--wrapper--mobile {
   display: block;
   width: 100%;
-  background-color: #212121;
-
+  background-color: $black;
   @include mq($from: tablet) {
     display: none;
   }
 
-  .ad-slot{
+  .ad-slot {
     margin-top: 14px;
   }
 }
 
 .caption {
-  @include mq($from: tablet){
-    width: 600px;
+  @include mq($from: tablet) {
+    // width: 400px;
   }
-  .pre{
+
+  svg {
+    fill: $darkPink;
+  }
+
+  .pre {
     font-weight: 900;
   }
-  p.caption-text{
-    padding: 0px;
+
+  p.caption-text {
+    margin-bottom: 0;
+    padding-top: 6px;
+    padding-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
 .body-image {
   position: relative;
-  margin-top: 30px;
-
-  .image--overlay{
-    z-index: 0;
-    @include mq($from: leftCol){
-      left: -150px;
-      right: -99px;
-    }
-  }
-
   img {
     width: 100%;
-    @include mq($from:leftCol){
-      width: 140%;
-      margin-left: -150px;
+
+    @include mq(desktop) {
+      width: 980px;
+    }
+    @include mq(leftCol) {
+      width: 990px;
+    }
+    @include mq(wide) {
+      width: 1070px;
     }
   }
 }
 
-h1{
-  font-size: 24px;
-  line-height: 24px !important;
-  margin-top: 12px;
-  font-family: $f-serif-headline;
-
-  @include mq($from: tablet) {
+h1 {
+  font-size: 30px;
+  line-height: 28px !important;
+  font-family: "Guardian Headline Bold", Georgia, serif;
+  font-weight: 900;
+  @include mq($from: desktop) {
     font-size: 36px;
     line-height: 36px !important;
   }
 
-  &.heading{
+  &.heading {
     padding-top: 6px;
     margin-top: 24px;
 
-    &:first-child{
+    &:first-child {
       border: none;
       margin-top: auto;
       padding-top: auto;
@@ -131,37 +140,32 @@ h1{
   top: 0;
   left: 0;
   right: 0;
-  bottom:0;
+  bottom: 0;
   background-color: black;
-  opacity: 0.2;
+  opacity: 0.1;
   z-index: 10;
 }
 //header
 
 .where-to-go-header {
-  &--image{
+  &--image {
     min-height: 480px;
-    // background-image: url('http://media.guim.co.uk/a9a42e7d97307819e617dca449e70cc219178562/6612_0_3976_7109/1119.jpg');
     width: 100%;
     background-size: 100%;
-    background-position:center;
+    background-position: center;
     position: relative;
     background-repeat: no-repeat;
     overflow: hidden;
-
+    height: 95vh;
     @include mq($from: mobileLandscape) {
-      height: 74vh;
       background-size: cover;
-      // background-image: url('https://uploads.guim.co.uk/2017/01/05/namibia_cover_image.png');
       background-position: center center;
     }
 
-    .video{
-      position: absolute;;
+    .video {
+      position: absolute;
       top: 40%;
       left: 50%;
-      // min-width: 100%;
-      // min-height: 100%;
       width: auto;
       height: auto;
       z-index: 0;
@@ -176,9 +180,9 @@ h1{
     }
 
     .video-image {
-      position: absolute;;
+      position: absolute;
       top: 50%;
-      left: 50%;
+      left: 20%;
       min-width: 100%;
       min-height: 100%;
       width: auto;
@@ -188,31 +192,31 @@ h1{
       -moz-transform: translateX(-50%) translateY(-50%);
       -webkit-transform: translateX(-50%) translateY(-50%);
       transform: translateX(-50%) translateY(-50%);
+      @include mq($from: mobileLandscape) {
+        left:50%;
+      }
     }
   }
 
   &--standfirst {
-    color: white;
+    color: #121212;
     right: 8px;
     line-height: 18px;
-    background-color: #1b1b1b;
-    padding: 6px 8px 24px 8px;
-
-    h1{
+    background-color: #fff;
+    // padding: 6px 8px 24px;
+    h1 {
       line-height: 36px;
       letter-spacing: -0.5px;
-      margin: 6px 0px 12px 0px;
-
+      margin: 6px 0 12px;
       @include mq($from: tablet) {
         width: 600px;
       }
     }
 
-    p{
-      margin: 0px;
+    p {
+      margin: 0;
       font-size: 18px;
       line-height: 24px;
-
       @include mq($from: desktop) {
         width: 600px;
       }
@@ -220,85 +224,156 @@ h1{
 
     .standfirst--wrapper {
       width: 100%;
-
       @include mq($from: desktop) {
         width: 980px;
         margin-left: auto;
         margin-right: auto;
       }
-
       @include mq($from: leftCol) {
         width: 1140px;
       }
-
       @include mq($from: wide) {
         width: 1300px;
       }
+
+      .content__main-column {
+        .strap {
+          max-width:80%;
+          padding-top: 4px;
+          padding-bottom: 12px;
+          @include mq($from: desktop) {
+            max-width: 100%;
+          }
+        }
+
+        @include mq($from: 620px) {
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 0.0625rem;
+            background: $grey;
+          }
+        }
+      }
+
+      .byline-wrap {
+        border-top: 1px solid $grey;
+        border-bottom: 1px solid $grey;
+        width: 100vw;
+        p {
+          max-width:80%;
+          @include mq($from: desktop) {
+            max-width: 100%;
+          }
+        }
+      }
+
       .byline {
-        border-top: 1px solid rgba(251, 251, 251, 0.5);
-        margin-top: 18px;
+        border: none;
+        margin-top: 0;
         padding-top: 6px;
+        padding-bottom: 12px;
+        color: $darkPink;
+
         a {
-          color: #f7acbb;
+          color: $darkPink;
         }
       }
     }
   }
 
-  &--title{
+  &--title {
     width: 100%;
     position: absolute;
     z-index: 20000;
-    bottom: 20px;
-    padding-left: 8px;
-
-    @include mq($from: desktop) {
-      bottom: 30px;
+    bottom: 0;
+    @include mq(620px) {
+      padding-left: 60px;
     }
+    @include mq(tablet) {
+      padding-left: 20px;
+    }
+    @include mq($from: desktop) {
+      bottom: 0;
+      padding-left: 0;
+    }
+    @include mq(leftCol) {
+      padding-left: 0px;
+    }
+
+    .content__main-column {
+      max-width: none;
+      background: $black;
+      width: 90%;
+      padding: 0 10px 10px;
+      float: left;
+      // @include mq(tablet) {
+      //   margin-left: 30px;
+      // }
+      @include mq($from: tablet) {
+        width: 100vw;
+        margin-right: 0;
+      }
+    }
+
     h1 {
       color: white;
+      @include mq(tablet) {
+        max-width: 510px;
+      }
+      @include mq($from: desktop) {
+        max-width: 620px;
+      }
     }
 
-    span {
-      display: block;
-    }
-    .small {
-      font-size: 18px;
-      font-weight: 900;
-      margin-bottom: 4px;
-    }
     .large {
-      font-weight: 100;
-      line-height: 50px;
-      font-size: 50px;
+      display: inline-block;
+      line-height: 40px;
+      font-size: 36px;
+      font-family: "Guardian Headline Bold", Georgia, serif;
+      font-weight: 900;
+
       @include mq($from: desktop) {
-        font-size: 68px;
-        line-height: 68px;
+        line-height: 54px;
+        font-size: 50px;
       }
+    }
+
+    .light-highlight {
+      width: 100%;
+      color: $lightPink;
+    }
+
+    .dark-highlight {
+      max-width: 700px;
     }
   }
 }
 //menu
-.where-to-go--menu{
-  margin-top: 18px;
-  padding-top: 6px;
 
-  ul{
-    border-top: 1px solid rgba(251, 251, 251, 0.5);
-    padding-top: 6px;
+.where-to-go--menu {
+  padding-top: 0;
+
+  ul {
+    padding: 8px 10px 12px 10px;
+    @include mq($from: leftCol) {
+        padding: 8px 0 12px 10px;
+    }
   }
 
   &.sticky {
     position: fixed;
     z-index: 20000;
-    top: 0px;
-    background-color: #333;
-    margin: 0px;
-    width: 94%;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-bottom: 12px;
-    left: 0px;
+    top: 0;
+    background-color: #fff;
+    margin: 0;
+    width: 100%;
+    left: 0;
+    border-bottom: solid 1px $grey;
 
     ul {
       border: none;
@@ -317,7 +392,7 @@ h1{
     }
   }
 
-  a{
+  a {
     color: inherit;
   }
 
@@ -325,14 +400,13 @@ h1{
     margin: 0;
   }
 
-  li{
+  li {
     list-style: none;
     font-family: $f-sans-serif-text;
     display: inline-block;
     font-size: 16px;
     margin-right: 6px;
     line-height: 22px;
-
     @include mq($from: desktop) {
       font-size: 18px;
       line-height: 24px;
@@ -342,34 +416,35 @@ h1{
       opacity: 0.5;
     }
 
-    &:after{
+    &:after {
       content: '/';
       margin-left: 6px;
       opacity: 0.5;
     }
 
-    &:last-child{
-      &:after{
+    &:last-child {
+      &:after {
         content: '';
       }
     }
   }
 }
 
-.header{
-  &[data-open="true"]{
-    .section-header--button{
-      svg{
+.header {
+  &[data-open="true"] {
+    .section-header--button {
+      svg {
         transform: rotate(315deg);
       }
-      .button{
+
+      .button {
         opacity: 0;
       }
     }
   }
 }
 
-.section-strap-line{
+.section-strap-line {
   position: absolute;
   bottom: 60px;
   color: white;
@@ -380,158 +455,206 @@ h1{
   line-height: 21px;
   width: 90%;
   margin-left: 2%;
-
   @include mq($from: tablet) {
     bottom: 20px;
     width: 100%;
-    margin-left: 0px;
+    margin-left: 0;
   }
 
-  .strapline-wrapper{
-    @include mq($from: desktop){
+  .strapline-wrapper {
+    @include mq($from: desktop) {
       margin-left: auto;
       margin-right: auto;
       width: 980px;
     }
-    @include mq($from: leftCol){
+    @include mq($from: leftCol) {
       margin-left: auto;
       margin-right: auto;
       width: 1140px;
     }
-    @include mq($from: wide){
+    @include mq($from: wide) {
       margin-left: auto;
       margin-right: auto;
       width: 1300px;
     }
-    .strapline{
-      display: block;
 
+    .strapline {
+      display: block;
       @include mq($from: tablet) {
-          width: 600px;
+        width: 600px;
       }
     }
   }
 }
 
-.section-header{
+.section-header {
   &--image {
     overflow: hidden;
     min-height: 600px;
     background-color: #333;
     position: relative;
-
     @include mq($from: desktop) {
       min-width: 500px;
     }
-
     @include mq($from: leftCol) {
       min-height: 650px;
     }
-
-    @include mq($from: wide){
+    @include mq($from: wide) {
       min-height: 750px;
     };
 
-    img{
+    img {
       position: absolute;
-      transform: translateX(-25%);
-
-
       @include mq($from: phablet) {
         width: auto;
         height: 100%;
-        margin-left: 0px;
+        margin-left: 0;
         display: block;
-        transform: translateX(0%);
       }
-
       @include mq($from: tablet) {
         width: 1000px;
         height: auto;
       }
-
       @include mq($from: desktop) {
-      width: 100%;
-      height: auto;
+        width: 100%;
+        height: auto;
       }
 
       &.bottom {
-        @include mq($from:leftCol){
+        @include mq($from:leftCol) {
           bottom: -50px;
         }
       }
 
       &.top {
-        @include mq($from:leftCol){
+        @include mq($from:leftCol) {
           top: -50px;
         }
       }
     }
+    .people-image {
+      transform: translateX(-52%);
+      @include mq($from: mobileLandscape) {
+        transform: translateX(0%);
+      }
+    }
+    .places-image {
+      transform: translateX(-50%);
+      @include mq($from: mobileLandscape) {
+        transform: translateX(0%);
+      }
+    }
+    .food-image {
+      transform: translateX(-30%);
+      @include mq($from: mobileLandscape) {
+        transform: translateX(0%);
+      }
+    }
+    .writing-image {
+      transform: translateX(-8%);
+      @include mq($from: mobileLandscape) {
+        transform: translateX(0%);
+      }
+    }
+
   }
 
   &--title {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
     z-index: 2000;
+    border-bottom: solid 1px #777;
+    @include mq($from: 620px) {
+      border:none;
+    }
 
     .content__main-column {
-      padding-bottom: 73px;
-
-      @include mq($from: desktop) {
-        padding-bottom: 23px;
-        border-left: 1px solid white;
+      padding-bottom: 60px;
+      background: $black;
+      width: 100vw;
+      max-width: none;
+      @include mq($from: 620px) {
+        padding-bottom: 12px;
       }
     }
 
     h1 {
-      font-size: 69px;
+      font-size: 36px;
+      line-height: 32px !important;
       font-weight: 100;
-      padding: 0px !important;
-      padding-left: 6px !important;
-      padding-top: 0px;
-      color: white;
-      line-height: 58px !important;
-
-      @include mq($from: desktop){
-        font-size: 68px;
-        line-height: 68px;
+      color: $lightPink;
+      border-bottom: solid 1px #777;
+      @include mq($from:desktop) {
+        font-size: 50px;
+        line-height: 50px !important;
       }
     }
 
+    p {
+      font-family: "Guardian Headline Italic", Georgia, serif;
+      color: #fff;
+      max-width: 400px;
+      font-size: 18px;
+      line-height: 24px;
+      margin: 0;
+      @include mq($from:leftCol) {
+        font-size: 20px;
+        line-height: 26px;
+      }
 
-    svg{
+    }
+
+    svg {
       width: 100%;
       height: auto;
+    }
+
+    .gs-container {
+      @include mq(620px) {
+        max-width: 620px;
+      }
+      @include mq(tablet) {
+        max-width: 700px;
+      }
+      @include mq(desktop) {
+        max-width: 980px;
+      }
+      @include mq(leftCol) {
+        max-width: 1140px;
+      }
+      @include mq(wide) {
+        max-width: 1300px;
+      }
     }
   }
 
   &--button {
     position: absolute;
-    bottom: 0px;
+    bottom: -10px;
     left: 10px;
-    z-index: 40;
-
-    @include mq($from: tablet) {
+    z-index: 9999;
+    padding-bottom: 20px;
+    @include mq($from: 620px) {
       display: none;
     };
 
-    p.button{
+    p.button {
       color: white;
       font-size: 16px;
       font-weight: 600;
       font-family: "Guardian Sans Web", "Guardian Agate Sans 1 Web", sans-serif;
-      background-color: rgba(51,51,51, 0.4);
+      background-color: $black;
       border: none;
       margin-top: 10px;
-      padding: 1px 16px;
+      padding: 1px 5px;
       -webkit-transition: all 1s ease-in-out;
       -moz-transition: all 1s ease-in-out;
       -o-transition: all 1s ease-in-out;
       transition: all 1s ease-in-out;
     }
 
-    svg{
+    svg {
       -webkit-transition: all 0.5s ease-in-out;
       -moz-transition: all 0.5s ease-in-out;
       -o-transition: all 0.5s ease-in-out;
@@ -543,59 +666,59 @@ h1{
 .section {
   h1 {
     &.heading {
-      padding: 0px;
+      padding: 0;
       margin-top: 6px;
       line-height: 36px;
-
       @include mq($from: tablet) {
-        padding-left: 0px;
+        padding-left: 0;
       }
     }
+
     &.subheading {
-      padding: 0px;
+      padding: 0;
       font-weight: 200;
       border-bottom: 1px solid rgba(51, 51, 51, 0.5);
       padding-bottom: 12px;
-      padding-top: 0px;
-
+      padding-top: 0;
       @include mq($from: tablet) {
-        padding-left: 0px;
+        padding-left: 0;
       }
     }
   }
 
-  p, h1 {
-      padding: 8px;
+  h1,
+  p {
+    padding: 3px 10px 12px;
+  }
+
+  .heading .text {
+    @include mq($from: leftCol) {
+      max-width: 610px;
+    }
   }
 
   &.copy {
     display: none;
-    width:96%;
     background-color: white;
     position: relative;
-    padding-top: 6px;
+    // padding-top: 6px;
     padding-bottom: 24px;
     margin-bottom: -16px;
-    padding-left: 2%;
-    padding-right: 2%;
-
-    @include mq($from: tablet) {
+    // padding-left: 10px;
+    // padding-right: 10px;
+    @include mq($from: 620px) {
       display: block;
-      padding-left: 20px
+      // padding-left: 20px;
     }
-
     @include mq($from: desktop) {
       width: 980px;
       margin-left: auto;
       margin-right: auto;
-      padding-left: 0px;
-      padding-left: 2%;
+      // padding-left: 0;
     }
-
     @include mq($from: leftCol) {
       width: 1140px;
     }
-
     @include mq($from: wide) {
       width: 1300px;
     }
@@ -605,166 +728,198 @@ h1{
     }
 
     .content__main-column {
+      @include mq($from:620px) {
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          height: 100%;
+          width: 0.0625rem;
+          background: $grey;
+        }
+      }
+
       &:nth-child(1) {
         .heading {
           border-top: none;
-          margin-top: 0px;
-          &:before{
+          margin-top: 0;
+
+          &:before {
             display: none;
           }
         }
       }
     }
 
-    h1{
+    h1 {
       width: 100%;
-
-      @include mq($from: tablet){
+      @include mq($from: tablet) {
         width: 600px;
       }
-      &.heading {
-        padding-top: 6px;
-        margin-top: 30px;
-        padding-bottom: 0px;
 
-        &:before{
-          display: block;
-          content: '';
-          width: 70px;
-          height: 10px;
-          background-color: #f7acbb;
-          z-index: 200;
-          position: relative;
-          margin-bottom: 6px;
-        }
+      &.heading {
+        border-top: solid 1px $grey;
+        border-bottom: solid 1px $grey;
+        color: $darkPink;
+        padding-top: 4px;
+        margin-top: 0;
+        padding-bottom: 8px;
+        width: auto;
+        padding-left: 10px;
+        padding-right: 10px;
 
         @include mq($from: tablet) {
           padding-bottom: 10px;
         }
+        @include mq($from: mobileLandscape) {
+          width: 100vw;
+        }
       }
     }
 
-    .body-image + h1 {
-      margin-top: -80px;
-      color: white;
-      position: relative;
-      border-top: none;
+    .credit {
       margin-left: 10px;
-      padding-bottom: 30px;
-
-
-      @include mq($from: tablet){
-        margin-left: 10px;
-        margin-top: -100px;
-        padding-bottom: 40px;
-      }
-      @include mq($from: leftCol) {
-        margin-left: 0px;
-      }
-
-      &:before{
-        display: block;
-        content: '';
-        width: 70px;
-        height: 10px;
-        background-color: white;
-        z-index: 200;
-        position: relative;
-        margin-bottom: 6px;
-      }
+      margin-bottom: 14px;
+      font-family: "Guardian Headline Italic Bold", Georgia, serif;
+      font-weight: 900;
+      color: $darkPink;
+      display: inline-block;
+      // line-height: 20px;
     }
 
-    pre.copy{
-      width: 100%;
-      font-family:$f-serif-text;
-      white-space: pre-wrap;       /* css-3 */
-      white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-      white-space: -pre-wrap;      /* Opera 4-6 */
-      white-space: -o-pre-wrap;    /* Opera 7 */
-      word-wrap: break-word;       /* Internet Explorer 5.5+ */
-
+    pre.copy {
+      width: auto;
+      font-family: $f-serif-text;
+      margin: 6px 10px 0;
+      line-height: 24px;
+      overflow: visible;
+      // padding-bottom: 12px;
+      white-space: pre-wrap;
+      /* css-3 */
+      white-space: -moz-pre-wrap;
+      /* Mozilla, since 1999 */
+      white-space: -pre-wrap;
+      /* Opera 4-6 */
+      white-space: -o-pre-wrap;
+      /* Opera 7 */
+      word-wrap: break-word;
+      /* Internet Explorer 5.5+ */
       @include mq($from: tablet) {
         width: 600px;
-        overflow: visible;
+        // overflow: visible;
       }
 
-      span.credit{
-        margin-left: 6px;
-        font-weight: 900;
-        font-family: $f-serif-headline;
-      }
-
-      span.pullquote, span.pullquote-credit{
-        color: #a60947;
-        font-size: 24px;
-        line-height: 26px;
-        font-family: $f-serif-headline;
-        display: inline-block;
-
-        @include mq($from: tablet) {
-          font-size: 30px;
-          line-height: 30px;
-          width: 80%;
+      .pullquote-wrap {
+        max-width: 620px;
+        position: relative;
+        left: -5px;
+        @include mq($from: desktop) {
+          left: -5px;
         }
-        @include mq($from: leftCol){
+        @include mq($from: leftCol) {
+          left: -140px;
+        }
+      }
+
+      .pullquote,
+      .pullquote-credit {
+        font-family: "Guardian Headline Regular", Georgia, serif;
+        font-weight: 400;
+        color: #fff;
+        font-size: 26px;
+        line-height: 34px;
+        display: inline;
+        @include mq($from: leftCol) {
+          font-size: 32px;
+          line-height: 40px;
           position: relative;
           z-index: 300;
         }
       }
-      span.pullquote-credit {
-        color: #767676;
-        font-size: 20px;
+
+      .pullquote-credit {
+        color: $darkPink;
+        display: block;
+        background-color: #fff;
+        margin-top: 3px;
+        padding-bottom: 3px;
+        font-style: italic;
+        font-size: 22px;
+        line-height: 28px;
       }
 
-      span.pullquote {
-        &:before{
-          background-image: url('<%= path %>/assets/quote.svg');
-          content: '';
-          display: block;
-          float: left;
-          height: 20px;
-          width: 28px;
-          background-size: 100%;
-          background-repeat: no-repeat;
-          margin-right: 12px;
-          margin-top: 3px;
+      .pullquote {
+        background-color: $darkPink;
+        box-shadow: 5px 0 0 $darkPink,-5px 0 0 $darkPink;
+        padding-bottom: 3px;
 
-          @include mq($from: tablet) {
-            height: 18px;
-            width: 30px;
+        &:before {
+          content: url("<%= path %>/assets/quote-small.svg");
+          display: inline;
+          margin-right: 5px;
+          @include mq($from: leftCol) {
+            content: url("<%= path %>/assets/quote.svg");
           }
         }
       }
-
     }
   }
 }
-
 //APPS fixes
 
-.ios, .andriod {
+.andriod,
+.ios {
+  h1, p {
+    margin: 0;
+  }
   .copy {
     a {
-      color: #005689;
+      color: $darkPink;
     }
   }
-  .where-to-go--menu {
-    ul {
-      padding: 0px;
-    }
+  .caption p {
+    margin-top: 0;
+  }
+  .byline {
+    font-weight: 900!important;
+  }
+  .caption-text {
+    font-family: $f-sans-serif-text;
+    font-size: 14px;
+    line-height: 16px;
+    color: #767676;
+    margin-top: 0;
 
-    &.sticky{
+  }
+  .body-image {
+    margin-top:0;
+    padding-top: 0;
+    img {
+      margin-top:0;
+      padding-top: 0;
+
+    }
+  }
+  .section h1, .section p {
+    margin-top: 0;
+  }
+
+  .where-to-go--menu {
+
+    &.sticky {
       position: relative;
       background-color: transparent;
-      padding: 0;
-      margin: 0;
-      padding-top: 6px;
-      margin-top: 12px;
+      // padding: 0;
+      // margin: 0;
+      // padding-top: 6px;
+      // margin-top: 12px;
     }
   }
 
   .section-header--button {
-    svg{
+    svg {
       float: left;
     }
 
@@ -778,4 +933,39 @@ h1{
   .ad--wrapper--mobile {
     display: none;
   }
+}
+@font-face {
+  font-family: "Guardian Headline Bold";
+  src: url("https://s3.amazonaws.com/gdn-cdn/fonts/garnett/GHGuardianHeadline-Bold.woff") format('woff'), url("https://s3.amazonaws.com/gdn-cdn/fonts/garnett/GHGuardianHeadline-Bold.ttf") format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: "Guardian Headline Medium";
+  src: url("https://s3.amazonaws.com/gdn-cdn/fonts/garnett/GHGuardianHeadline-Medium.woff") format('woff'), url("https://s3.amazonaws.com/gdn-cdn/fonts/garnett/GHGuardianHeadline-Medium.ttf") format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: "Guardian Headline Regular";
+  src: url("https://s3.amazonaws.com/gdn-cdn/fonts/garnett/GHGuardianHeadline-Regular.woff") format('woff'), url("https://s3.amazonaws.com/gdn-cdn/fonts/garnett/GHGuardianHeadline-Regular.ttf") format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: "Guardian Headline Italic";
+  src: url("https://s3.amazonaws.com/gdn-cdn/fonts/garnett/GHGuardianHeadline-RegularItalic.woff") format('woff'), url("https://s3.amazonaws.com/gdn-cdn/fonts/garnett/GHGuardianHeadline-RegularItalic.ttf") format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: "Guardian Headline Italic Bold";
+  src: url("https://s3.amazonaws.com/gdn-cdn/fonts/garnett/GHGuardianHeadline-MediumItalic.woff") format('woff'), url("https://s3.amazonaws.com/gdn-cdn/fonts/garnett/GHGuardianHeadline-MediumItalic.ttf") format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
 }
